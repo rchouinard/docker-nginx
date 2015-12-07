@@ -1,6 +1,10 @@
 FROM centos:7
+MAINTAINER Ryan Chouinard <docker@rych-dev.com>
+ENV NGINX_VERSION 1.9.7-1
 COPY nginx.repo /etc/yum.repos.d/nginx.repo
-RUN yum install --assumeyes ca-certificates nginx \
+RUN yum install --assumeyes \
+           ca-certificates \
+           nginx-${NGINX_VERSION}.el7.ngx \
       && yum clean all \
       && ln -sf /dev/stdout /var/log/nginx/access.log \
       && ln -sf /dev/stderr /var/log/nginx/error.log
