@@ -1,6 +1,6 @@
 FROM centos:7
 MAINTAINER Ryan Chouinard <docker@rych-dev.com>
-ENV NGINX_VERSION 1.9.7-1
+ENV NGINX_VERSION 1.9.9-1
 COPY nginx.repo /etc/yum.repos.d/nginx.repo
 RUN yum install --assumeyes \
            ca-certificates \
